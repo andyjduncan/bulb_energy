@@ -81,8 +81,6 @@ query Tariffs($postcode: String!, $monthly: Boolean!, $legacyPrepay: Boolean!, $
 
 fragment StandardElectricityTariff on ResidentialElectricityStandardTariff {
   fuel
-  postcode
-  paymentMethod
   standingCharge
   unitRates {
     standard
@@ -93,8 +91,6 @@ fragment StandardElectricityTariff on ResidentialElectricityStandardTariff {
 
 fragment Eco7ElectricityTariff on ResidentialElectricityEconomy7Tariff {
   fuel
-  postcode
-  paymentMethod
   standingCharge
   unitRates {
     day
@@ -138,11 +134,8 @@ def makequery(postcode: str, eco7: bool, payplan: str) -> dict:
     url = "https://join-gateway.bulb.co.uk/graphql"
     opname = "Tariffs"
     headers = {
-        "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:78.0) Gecko/20100101 Firefox/78.0",
-        "x-bulb-session": "15630c9a-577d-45da-a8ed",
         "content-type": "application/json",
         "Origin": "https://bulb.co.uk",
-        "TE": "Trailers",
     }
 
     variables = {
