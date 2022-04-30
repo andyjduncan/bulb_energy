@@ -1,0 +1,7 @@
+{
+    "name": "Bulb Energy Tariffs",
+    "content_in_root": true,
+    "filename": "sensor.py",
+    "render_readme": true,
+    "domains": ["sensor"]
+}
